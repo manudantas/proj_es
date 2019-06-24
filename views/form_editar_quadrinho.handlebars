@@ -1,0 +1,11 @@
+<form action="/quadrinho/editar/{{quadrinho.id}}" method="POST">
+    <p>Nome: </p>
+    <input type="text" name="nome" value="{{quadrinho.nome}}">
+    <p>Edição: </p>
+    <input type="text" name="edicao" value="{{quadrinho.edicao}}">
+    <p>Editora: </p>
+    <input type="text" name="editora" value="{{quadrinho.editora}}">
+    <p>Preco: </p>
+    <input type="text" name="preco" value={{quadrinho.preco}}> 
+    <button type="submit">Editar quadrinho</button>
+</form>

@@ -1,0 +1,15 @@
+<h1>Lista de Coleções</h1>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th></th>
+    </tr>
+    {{#each colecoes}}
+        <tr>
+            <th>{{nome}}</th>
+            <th><a href="/colecao/deletar/{{id}}"><button>Deletar</button></a></th>
+            <th><a href="/colecao/editar/{{id}}"><button>Editar</button></a></th>
+        </tr>
+    {{/each}}
+</table>    

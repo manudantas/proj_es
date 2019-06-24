@@ -1,0 +1,18 @@
+<h1>Lista de Quadrinhos</h1>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Edição</th>
+        <th>Editora</th>
+        <th>Preço</th>
+    </tr>
+    {{#each quadrinhos}}
+        <tr>
+            <th>{{nome}}</th>
+            <th>{{edicao}}</th>
+            <th>{{editora}}</th>
+            <th>{{preco}}</th>
+        </tr>
+    {{/each}}
+</table>    

@@ -1,0 +1,23 @@
+<h1>Lista de Quadrinhos</h1>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Edição</th>
+        <th>Editora</th>
+        <th>Preço</th>
+        <th></th>
+    </tr>
+    {{#each quadrinhos}}
+        <tr>
+            <th>{{nome}}</th>
+            <th>{{edicao}}</th>
+            <th>{{editora}}</th>
+            <th>{{preco}}</th>
+            <th><a href="/quadrinho/deletar/{{id}}"><button>Deletar</button></a></th>
+            <th><a href="/quadrinho/editar/{{id}}"><button>Editar</button></a></th>
+            <th><a href="/avaliacao/cadastro/{{id}}"><button>Avaliar</button></a></th>
+            <th><a href="/emprestimo/cadastro/{{id}}"><button>Emprestar</button></a></th>
+        </tr>
+    {{/each}}
+</table>    
