@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var Quadrinho = require("../models/Quadrinho")
+var sequelize = require('sequelize')
 
 //rotas
 
@@ -31,6 +32,22 @@ router.get('/listar', function(req, res){
         res.render('home_quadrinho', {quadrinhos: quadrinhos})
     })
 })
+
+router.get('/gastos', function(req, res){
+     Quadrinho.findAll().then(quadrinhos =>{
+         var total = 0;
+
+         function somar(item) {
+             total += parseFloat(item.preco);
+         }
+
+         quadrinhos.forEach(somar)
+         console.log(total)
+         res.render('gastos', {total: total})
+     },
+     )
+})
+
 
 router.get('/editar/:id', function(req, res){
     Quadrinho.findOne(

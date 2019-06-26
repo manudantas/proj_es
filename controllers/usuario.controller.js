@@ -17,8 +17,8 @@ router.post('/validar', function(req, res){
     Usuario.findOne({  
         where: {login: req.body.login, senha: req.body.senha}
       })
-      .then(user => {
-        res.send("Bem vindo" +user.nome)
+      .then(usuario => {
+        res.redirect('/quadrinho/listar')
       }).catch(function(){
         res.send("Usuario não encontrado")
       });

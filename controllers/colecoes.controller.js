@@ -56,4 +56,21 @@ router.get('/deletar/:id', function(req, res){
     })
 })
 
+router.get('/pesquisar', function(req, res){
+    res.render('form_pesquisar_colecao')
+})
+
+router.post('/pesquisar', function(req, res){
+    Colecao.findOne(
+        {where: {'nome': req.body.nome}
+    })
+    .then(colecao => {
+        if(colecao !== null){
+            res.render('form_mostrar_colecao', {colecao: colecao})
+        }else{
+            res.send("Esta coleção não existe")
+        }
+    })
+})
+
 module.exports = router;
